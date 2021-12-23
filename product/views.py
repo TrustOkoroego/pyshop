@@ -1,0 +1,15 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from.models import Product
+
+
+
+def index(request):
+    product = Product.objects.all() #this is used for good display
+    return render(request, 'index.html', {'product': product})
+
+
+def new(request):
+    return HttpResponse("New product")
+
+
